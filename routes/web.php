@@ -13,9 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
+Route::get('/',[TodolistController::class,'index']); 
 Route::post('/save-todo', [TodolistController::class,'saveTodo'])->name('saveTodo');

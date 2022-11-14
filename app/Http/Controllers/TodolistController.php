@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 
 class TodolistController extends Controller
 {
-    //
+    public function index()
+    {
+        return view('welcome',['items'=>TodoList::all()]);
+    }
     public function saveTodo(Request $req)
     {
         $todoobj= new TodoList();   
-        $todoobj->title ='test3';
+        $todoobj->title =$req->todo;
         $todoobj->save();
-        return view('welcome');       
+        return redirect("/");     
     }
 }

@@ -17,5 +17,10 @@
         <input type="text" name="todo">
         <button type="submit">Save</button>
     </form>
+    <ul>
+        @foreach($items as $value)
+        <li>{{$value->title}}</li>
+        @endforeach
+    </ul>
 </body>
 </html>
